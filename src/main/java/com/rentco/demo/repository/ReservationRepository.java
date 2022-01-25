@@ -20,7 +20,7 @@ public interface ReservationRepository extends JpaRepository<ReservationModel, I
     @Query(nativeQuery = true, value = "SELECT * FROM RESERVATION INNER JOIN TENANT ON RESERVATION.TENANT_ID = TENANT.ID WHERE TENANT.NAME=?1")
     Optional<List<ReservationModel>> findAllReservationByTenantName(String tenantName);
 
-    @Query(nativeQuery = true, value = "SELECT * FROM RESERVATION WHERE RESERVATION.RENT_ROOM_ID=?2 AND DATE_FROM<= ?1 OR RESERVATION.RENT_ROOM_ID=?2 AND DATE_TO >= ?1 LIMIT 1")
+    @Query(nativeQuery = true, value = "SELECT * FROM RESERVATION WHERE RESERVATION.RENT_ROOM_ID=?2 AND (DATE_FROM<= ?1 AND DATE_TO >= ?1) LIMIT 1")
     Optional<ReservationModel> findIfRoomTaken(Date date, Integer roomId);
 
 }
