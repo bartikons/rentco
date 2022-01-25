@@ -1,10 +1,8 @@
 package com.rentco.demo.dto;
 
-import java.sql.Date;
-
-import com.rentco.demo.model.RentRoomModel;
 import com.rentco.demo.model.ReservationModel;
-import com.rentco.demo.model.TenantModel;
+
+import java.sql.Date;
 
 public class ReservationDto {
 

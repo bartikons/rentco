@@ -27,7 +27,7 @@ public class ReservationService {
 
     @Autowired
     public ReservationService(ReservationRepository reservationRepository, TenantRepository tenantRepository,
-            RentRoomRepository rentRoomRepository) {
+                              RentRoomRepository rentRoomRepository) {
         this.reservationRepository = reservationRepository;
         this.tenantRepository = tenantRepository;
         this.rentRoomRepository = rentRoomRepository;
@@ -62,7 +62,7 @@ public class ReservationService {
     public ResponseEntity<?> setReservation(ReservationCommand command) {
         Optional<TenantModel> tenant = tenantRepository.findById(command.getTenantId());
         Optional<RentRoomModel> room = rentRoomRepository.findById(command.getRentroomId());
-        if (isRoomTaken(command.getDateFrom(), command.getDateTo(),command.getRentroomId())) {
+        if (isRoomTaken(command.getDateFrom(), command.getDateTo(), command.getRentroomId())) {
             return new ResponseEntity<>("Room is already taken", HttpStatus.NOT_ACCEPTABLE);
         }
         if (!tenant.isPresent()) {

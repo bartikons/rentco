@@ -21,6 +21,6 @@ public interface ReservationRepository extends JpaRepository<ReservationModel, I
     Optional<List<ReservationModel>> findAllReservationByTenantName(String tenantName);
 
     @Query(nativeQuery = true, value = "SELECT * FROM RESERVATION WHERE RESERVATION.RENT_ROOM_ID=?2 AND DATE_FROM<= ?1 OR RESERVATION.RENT_ROOM_ID=?2 AND DATE_TO >= ?1 LIMIT 1")
-    Optional<ReservationModel> findIfRoomTaken(Date date,Integer roomId);
+    Optional<ReservationModel> findIfRoomTaken(Date date, Integer roomId);
 
 }

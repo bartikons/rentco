@@ -1,11 +1,6 @@
 package com.rentco.demo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "RENT_ROOM")
@@ -33,7 +28,7 @@ public class RentRoomModel {
     }
 
     public RentRoomModel(Integer id, String name, float price, String area, String description,
-            Integer landlordOfRoom) {
+                         Integer landlordOfRoom) {
         this.id = id;
         this.name = name;
         this.price = price;
