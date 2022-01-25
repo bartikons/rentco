@@ -11,6 +11,28 @@ public class ReservationCommand {
     private Date dateTo;
     private Integer rentroomId;
 
+    public ReservationCommand() {
+    }
+
+    public ReservationCommand(Integer id, Integer price, Integer tenantId, Integer landlordId, Date dateFrom, Date dateTo, Integer rentroomId) {
+        this.id = id;
+        this.price = price;
+        this.tenantId = tenantId;
+        this.landlordId = landlordId;
+        this.dateFrom = dateFrom;
+        this.dateTo = dateTo;
+        this.rentroomId = rentroomId;
+    }
+
+    public ReservationCommand(Integer price, Integer tenantId, Integer landlordId, Date dateFrom, Date dateTo, Integer rentroomId) {
+        this.price = price;
+        this.tenantId = tenantId;
+        this.landlordId = landlordId;
+        this.dateFrom = dateFrom;
+        this.dateTo = dateTo;
+        this.rentroomId = rentroomId;
+    }
+
     public Integer getId() {
         return this.id;
     }
